@@ -1,0 +1,181 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-size: 0.8em;
+  list-style-type:none;
+  background-color: hsl(222, 26%, 31%);
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  width: 400px;
+  margin: 0 auto;
+}
+ 
+
+header{
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  font-size: 40px;
+  align-items: center;
+  height: 80px;
+}
+
+
+/*-----------estilizando o botao------------*/
+.btns{
+  display: flex;
+  background-color: hsl(223, 31%, 20%);
+  border-radius: 60px;
+  width: 80px;
+  height: 30px;
+  margin:5px;
+  cursor: pointer;
+}
+
+.btns input, .label {
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+}
+
+.btns input,.label:before, .btns input,.label:after{
+  content: '';
+}
+
+.btns input,.label:before {
+  background-color: yellow;
+  border-radius: 60px;
+  transition: all 0.4s;
+}
+
+.btns input,.label:after {
+  width: 62px;
+  background-color: #fff;
+  border-radius: 100%;
+  transition: all 0.4s;
+}
+
+.btns input:checked, .label:before {
+  background-color: #8ce196;
+}
+.btns input:checked .label:after {
+  transform: translateX(60px);
+}
+
+/*--------------------------------------------------*/
+
+main, main input, #inputDisplayResultado{
+  border-radius: 10px;
+}
+
+main input{
+  cursor: pointer;
+  background-color: hsl(30, 25%, 89%);
+  border: none;
+  border-bottom: 3px solid hsl(28, 16%, 65%);
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: hsl(221, 14%, 31%);
+}
+
+main input:hover{
+  background-color: white;
+  font-size: 2rem;
+  transition: 0.2s;
+}
+
+
+#inputDisplayResultado{
+  width: 100%;
+  font-size: 32px;
+  height: 80px;
+  background-color: hsl(224, 36%, 15%);
+  color: white;
+  border: none;
+  outline: 0;
+  text-align: right;
+  padding-right: 10px;
+}
+
+/*declarando o grid*/
+
+main{
+  position: absolute;
+  width: 400px;
+  padding: 20px;
+  background-color: hsl(223, 31%, 20%);
+  margin-top: 20px;
+  justify-content:stretch;
+  
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 50px 50px 50px 50px 50px;
+  grid-gap: 18px;
+
+  grid-template-areas: "seven eight nine del"
+                       "four five six plus"
+                       "one two three menos"
+                       "dot zero barra mult"
+                       "reset reset igual igual"
+}
+
+#reset{
+  grid-area: reset;
+}
+
+#del{
+  grid-area: del;
+}
+
+#igual{
+  grid-area: igual;
+  background-color: hsl(6, 63%, 50%);
+  border-bottom: 3px solid hsl(6, 70%, 34%);
+  color: white;
+}
+#igual:hover{
+  background-color: hsl(6, 90%, 40%);
+  font-size: 1.5rem;
+  transition: 0.2s;
+}
+
+#reset, #del{
+  background-color: hsl(225, 21%, 49%);
+  color: white;
+  border-bottom: 3px solid hsl(224, 28%, 35%);
+}
+#reset:hover, #del:hover{
+  background-color: hsl(230, 40%, 49%);
+  transition: 0.2s;
+  font-size: 1.5rem;
+}
+
+#reset, #del, #igual{
+  font-size: 17px;
+}
+
+@media (max-width: 430px){
+  .App, main{
+    width: 290px;
+  }
+
+  main{
+     grid-gap: 14px;
+  }
+
+  main input{
+    border-radius: 5px;
+    font-size: 25px;
+  }
+
+  #reset, #del, #igual{
+    font-size: 15px;
+  }
+}
